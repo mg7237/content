@@ -41,7 +41,7 @@ class _BottomSheetImplementationState extends State<BottomSheetImplementation> {
         allowMultiple: true,
         type: FileType.custom,
         dialogTitle: 'Choose Files',
-        allowedExtensions: ['pdf', 'png', 'jpeg', 'jpg', 'svg']);
+        allowedExtensions: ['pdf', 'png', 'jpeg', 'jpg', 'svg', 'gif']);
 
     if (result != null) {
       print('inthey');
@@ -101,7 +101,7 @@ class _BottomSheetImplementationState extends State<BottomSheetImplementation> {
       for (var element in filePaths) {
         File fl = File(element);
         MultipartFile result = await MultipartFile.fromFile(element,
-            filename: fl.path.split('/').last);
+            filename: fl.path.split('/').last.toLowerCase());
         fileList.add(result);
       }
       print('BASE_URL $BASE_URL');
