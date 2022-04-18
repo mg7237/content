@@ -110,7 +110,7 @@ class _BottomSheetImplementationState extends State<BottomSheetImplementation> {
       var response = await dio.post(
         '$BASE_URL/uploadfiles',
         data: formData,
-      ); // options: Options(headers: {'Content-Type': 'multipart/form-data'})
+      );
       if (response.statusCode == 200) {
         _filesPosted = 'Success:' + fileList.length.toString() + ' files added';
         print(_filesPosted);
