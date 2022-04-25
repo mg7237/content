@@ -7,7 +7,8 @@ import 'web_view_example.dart';
 import 'package:flutter/services.dart';
 import 'pdf_view_example.dart';
 import 'youtube_player.dart';
-import './bottom_sheet.dart';
+import 'bottom_sheet.dart';
+import 'view_file.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -90,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => WebViewExample(),
+                      builder: (_) => WebViewExample('https://flutter.dev'),
                     ),
                   );
                 }),
@@ -133,6 +134,20 @@ class _MyHomePageState extends State<MyHomePage> {
                     context,
                     MaterialPageRoute(
                       builder: (_) => BottomSheetImplementation(),
+                    ),
+                  );
+                }),
+            heightBox,
+            InkWell(
+                child: const Text(
+                  'View Files',
+                  style: TextStyle(fontSize: 18),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ViewFile(),
                     ),
                   );
                 }),
