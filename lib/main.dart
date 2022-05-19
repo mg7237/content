@@ -1,14 +1,12 @@
 import 'package:content/video_example_complex.dart';
 import 'package:flutter/material.dart';
-import 'package:photo_view/photo_view.dart';
 import 'hero.dart';
-import 'video_example.dart';
 import 'web_view_example.dart';
-import 'package:flutter/services.dart';
 import 'pdf_view_example.dart';
 import 'youtube_player.dart';
 import 'bottom_sheet.dart';
 import 'view_file.dart';
+import 'chat_ui.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,108 +48,125 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            InkWell(
-              child: const Text(
-                'View Image',
-                style: TextStyle(fontSize: 18),
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              InkWell(
+                child: const Text(
+                  'View Image',
+                  style: TextStyle(fontSize: 18),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => HeroExample(),
+                    ),
+                  );
+                },
               ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => HeroExample(),
+              heightBox,
+              InkWell(
+                  child: const Text(
+                    'View Video',
+                    style: TextStyle(fontSize: 18),
                   ),
-                );
-              },
-            ),
-            heightBox,
-            InkWell(
-                child: const Text(
-                  'View Video',
-                  style: TextStyle(fontSize: 18),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => VideoComplex(),
-                    ),
-                  );
-                }),
-            heightBox,
-            InkWell(
-                child: const Text(
-                  'View URL',
-                  style: TextStyle(fontSize: 18),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => WebViewExample('https://flutter.dev'),
-                    ),
-                  );
-                }),
-            heightBox,
-            InkWell(
-                child: const Text(
-                  'View PDF',
-                  style: TextStyle(fontSize: 18),
-                ),
-                onTap: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => PDFexample(),
-                    ),
-                  );
-                }),
-            heightBox,
-            InkWell(
-                child: const Text(
-                  'View Youtube Video',
-                  style: TextStyle(fontSize: 18),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => Youtube(),
-                    ),
-                  );
-                }),
-            heightBox,
-            InkWell(
-                child: const Text(
-                  'Bottom Sheet',
-                  style: TextStyle(fontSize: 18),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => BottomSheetImplementation(),
-                    ),
-                  );
-                }),
-            heightBox,
-            InkWell(
-                child: const Text(
-                  'View Files',
-                  style: TextStyle(fontSize: 18),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => ViewFile(),
-                    ),
-                  );
-                }),
-          ],
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => VideoComplex(),
+                      ),
+                    );
+                  }),
+              heightBox,
+              InkWell(
+                  child: const Text(
+                    'View URL',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => WebViewExample('https://flutter.dev'),
+                      ),
+                    );
+                  }),
+              heightBox,
+              InkWell(
+                  child: const Text(
+                    'View PDF',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => PDFexample(),
+                      ),
+                    );
+                  }),
+              heightBox,
+              InkWell(
+                  child: const Text(
+                    'View Youtube Video',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => Youtube(),
+                      ),
+                    );
+                  }),
+              heightBox,
+              InkWell(
+                  child: const Text(
+                    'Bottom Sheet',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => BottomSheetImplementation(),
+                      ),
+                    );
+                  }),
+              heightBox,
+              InkWell(
+                  child: const Text(
+                    'View Files',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ViewFile(),
+                      ),
+                    );
+                  }),
+              heightBox,
+              InkWell(
+                  child: const Text(
+                    'Chat UI',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const SelectFiles(),
+                      ),
+                    );
+                  }),
+            ],
+          ),
         ),
       ),
 // This trailing comma makes auto-formatting nicer for build methods.
